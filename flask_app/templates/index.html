@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('path/to/source-sans-pro-bold.woff2') format('woff2'),
+                 url('path/to/source-sans-pro-bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;  /* Adjust the gap as needed */
+        }
+
+        .grid-item {
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-weight: bold;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Parsed Flats</h1>
+    <div class="grid-container">
+        {% for row in rows %}
+            <div class="grid-item">
+                <h2>{{row[0]}}</h2>
+                <img src="{{row[1]}}" alt="{{row[0]}}" style="border-radius: 7%;">
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
